@@ -1,5 +1,6 @@
 <p>
     <img src="https://img.shields.io/github/last-commit/jasokolowska/wheel-wise-app/main" alt="Last update">
+    <img src="https://img.shields.io/github/commit-activity/t/jasokolowska/wheel-wise-app/main" alt="Number of commits">
     <img src="https://img.shields.io/github/contributors/jasokolowska/wheel-wise-app" alt="Number of contributors">
     <img src="https://img.shields.io/github/forks/jasokolowska/wheel-wise-app" alt="Number of forks">
     <img src="https://img.shields.io/github/stars/jasokolowska/wheel-wise-app" alt="Number of stars">
