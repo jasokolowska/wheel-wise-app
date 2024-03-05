@@ -1,43 +1,16 @@
 <div class="inline-flex">
-<p-card header="Advanced Card" subheader="Card Subheader" [style]="{ width: '360px' }" class="p-5">
-  <ng-template pTemplate="header">
-    <img alt="Card" src="/assets/coen-van-de-broek-OFyh9TpMyM8-unsplash.jpg" />
-  </ng-template>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque
-    quas!
-  </p>
-  <ng-template pTemplate="footer">
-    <p-button label="Save" icon="pi pi-check"></p-button>
-    <p-button label="Cancel" icon="pi pi-times" styleClass="p-button-secondary" [style]="{ 'margin-left': '.5em' }"></p-button>
-  </ng-template>
-</p-card>
-
-<p-card header="Advanced Card" subheader="Card Subheader" [style]="{ width: '360px' }" class="p-5">
-  <ng-template pTemplate="header">
-    <img alt="Card" src="/assets/coen-van-de-broek-OFyh9TpMyM8-unsplash.jpg" />
-  </ng-template>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque
-    quas!
-  </p>
-  <ng-template pTemplate="footer">
-    <p-button label="Save" icon="pi pi-check"></p-button>
-    <p-button label="Cancel" icon="pi pi-times" styleClass="p-button-secondary" [style]="{ 'margin-left': '.5em' }"></p-button>
-  </ng-template>
-</p-card>
-
-<p-card header="Advanced Card" subheader="Card Subheader" [style]="{ width: '360px' }" class="p-5">
-  <ng-template pTemplate="header">
-    <img alt="Card" src="/assets/coen-van-de-broek-OFyh9TpMyM8-unsplash.jpg" />
-  </ng-template>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque
-    quas!
-  </p>
-  <ng-template pTemplate="footer">
-    <p-button label="Save" icon="pi pi-check"></p-button>
-    <p-button label="Cancel" icon="pi pi-times" styleClass="p-button-secondary" [style]="{ 'margin-left': '.5em' }"></p-button>
-  </ng-template>
-</p-card>
+  @for (event of events; track event.header) {
+    <app-event-item
+      class=" inline-flex w-2 p-3"
+      [header]="event.header"
+      [subheader]="event.subheader"
+      [distance]="event.distance"
+      [level]="event.level"
+      [type]="event.type"
+      [img]="event.img"
+    >
+    </app-event-item>
+  } @empty {
+    There is no open events right now...
+  }
 </div>
