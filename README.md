@@ -10,6 +10,7 @@
 
 WheelWise is a platform designed to empower users to participate in a variety of cycling events. Whether it's competitive races or leisurely group rides, WheelWise provides cyclists with the tools they need to engage in the cycling community.
 
+![homepage](wheel-wise-client/src/assets/app-screens/homepage.png?raw=true "Homepage")
 ## Functionality
 
 WheelWise will allow users to:
