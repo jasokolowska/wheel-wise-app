@@ -2,15 +2,15 @@ import {Component} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
 import {SidebarModule} from "primeng/sidebar";
 import {ButtonModule} from "primeng/button";
+import {NavigationSideBarComponent} from "./navigation/navigation-side-bar/navigation-side-bar.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, SidebarModule, ButtonModule],
+  imports: [RouterOutlet, SidebarModule, ButtonModule, NavigationSideBarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  sidebarVisible: boolean = false;
-
+  sidebarVisible = false;
 }

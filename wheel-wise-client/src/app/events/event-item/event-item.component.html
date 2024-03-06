@@ -1,12 +1,15 @@
-<p-card [header]="header" [subheader]="subheader" class="h-full">
+<p-card
+  [header]="header"
+  [subheader]="subheader"
+  styleClass="flex justify-content-between flex-column h-full">
   <ng-template pTemplate="header">
-    <img alt="Event picture" [src]="img" />
+    <img alt="Event picture" [src]="img"/>
   </ng-template>
   <div>Type: {{ type }}</div>
   <div>Level: {{ level }}</div>
   <div>Distance: {{ distance }}</div>
-  <ng-template pTemplate="footer" class="flex">
-    <p-button label="Sign Up" icon="pi pi-check" styleClass="w-5"></p-button>
-    <p-button label="Details" icon="pi pi-times" styleClass="w-5 p-button-secondary" [style]="{ 'margin-left': '.5em' }"></p-button>
+  <ng-template pTemplate="footer">
+    <p-button label="Sign Up" icon="pi pi-check"></p-button>
+    <p-button label="Details" icon="pi pi-bars" styleClass="p-button-secondary"></p-button>
   </ng-template>
 </p-card>

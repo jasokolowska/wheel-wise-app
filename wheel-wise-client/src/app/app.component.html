@@ -1,12 +1,12 @@
-<p-sidebar [(visible)]="sidebarVisible" position="left">
-  <h3>Left Sidebar</h3>
-</p-sidebar>
+<app-navigation-side-bar
+  [sidebarVisible]="sidebarVisible">
+</app-navigation-side-bar>
 
 <div>
   <p-button type="button" class="mr-2" (click)="sidebarVisible = true" icon="pi pi-align-justify"></p-button>
 </div>
 
-<div>
+<div class="p-6">
   <router-outlet></router-outlet>
 </div>
 

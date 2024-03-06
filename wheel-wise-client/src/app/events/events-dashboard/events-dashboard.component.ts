@@ -45,7 +45,7 @@ const events: Event[] = [
   {
     header: 'Road Race',
     subheader: 'Feel the adrenaline!',
-    img: '/assets/tom-sam-qf9SL6zdNi0-unsplash.jpg',
+    img: '/assets/lucas-canino-Lk4Bk3gPdoc-unsplash.jpg',
     distance: '30 kilometers away',
     level: 'Advanced',
     type: 'competition'
