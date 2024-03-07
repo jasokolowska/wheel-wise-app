@@ -3,6 +3,7 @@ import {ButtonModule} from "primeng/button";
 import {CardModule} from "primeng/card";
 import {SharedModule} from "primeng/api";
 import {NgOptimizedImage, NgStyle} from "@angular/common";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-event-item',
@@ -12,7 +13,8 @@ import {NgOptimizedImage, NgStyle} from "@angular/common";
     CardModule,
     SharedModule,
     NgOptimizedImage,
-    NgStyle
+    NgStyle,
+    RouterLink
   ],
   templateUrl: './event-item.component.html',
   styleUrl: './event-item.component.scss'
