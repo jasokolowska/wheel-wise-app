@@ -49,3 +49,7 @@ src/
 ├── styles.scss                  # Global styles
 └── index.html                   # Main HTML file
 ```
+
+# Libraries
+https://github.com/angular/components/blob/main/src/google-maps/README.md
+https://angular-maps.com/guides/getting-started/
