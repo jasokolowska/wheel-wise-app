@@ -1,3 +1,6 @@
+# Ignore environment files
+wheel-wise-client/src/environments/*.ts
+
 # Compiled class file
 *.class
 
