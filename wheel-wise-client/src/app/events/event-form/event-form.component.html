@@ -1,32 +1,38 @@
 <div class="grid bg-white-alpha-70">
-  <h2>Create New Event</h2>
-  <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label>Event Type:</label>
-      <input type="text" formControlName="eventType" class="form-control">
-    </div>
-    <div class="form-group">
-      <label>Distance:</label>
-      <input type="number" formControlName="distance" class="form-control">
-    </div>
-    <div class="form-group">
-      <label for="difficultyLevel">Difficulty Level:</label>
-      <input type="text" formControlName="difficultyLevel" class="form-control">
-    </div>
-    <div class="form-group">
-      <label for="description">Description:</label>
-      <textarea formControlName="description" class="form-control"></textarea>
-    </div>
-    <div class="form-group">
-      <label for="startDatetime">Start Date & Time:</label>
-      <input type="datetime-local" formControlName="startDatetime" class="form-control">
-    </div>
-    <div class="form-group">
-      <label for="endDatetime">End Date & Time:</label>
-      <input type="datetime-local" formControlName="endDatetime" class="form-control">
-    </div>
-    <!-- Dodaj inne pola formularza zgodnie z potrzebami -->
-    <button type="submit" class="btn btn-primary">Create Event</button>
-  </form>
+  <h2 class="col-12">Create New Event</h2>
+  <div class="col-6">
+    <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>Event Type:</label>
+        <p-dropdown type="text"  formControlName="eventType" class="form-control"></p-dropdown>
+      </div>
+      <div class="form-group">
+        <label>Distance:</label>
+        <input type="number" pInputText formControlName="distance" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="difficultyLevel">Difficulty Level:</label>
+        <input type="text" pInputText formControlName="difficultyLevel" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea rows="5" cols="30" pInputTextarea formControlName="description" class="form-control"></textarea>
+      </div>
+      <div class="form-group">
+        <label class="p-float-label" for="startDatetime">Start Date & Time:</label>
+        <p-calendar formControlName="startDatetime" class="form-control"></p-calendar>
+      </div>
+      <div class="form-group">
+        <label for="endDatetime">End Date & Time:</label>
+        <p-calendar formControlName="endDatetime" class="form-control"></p-calendar>
+      </div>
+    </form>
+  </div>
+  <div class="col-6">
+    <app-map></app-map>
+  </div>
+  <div class="col-12" >
+    <p-button>Create Event</p-button>
+  </div>
 </div>
 
