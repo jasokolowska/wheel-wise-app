@@ -2,29 +2,29 @@
   <h2 class="col-12">Create New Event</h2>
   <div class="col-6">
     <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <label>Event Type:</label>
-        <p-dropdown type="text"  formControlName="eventType" class="form-control"></p-dropdown>
+      <div class="grid flex m-1">
+        <label class="col-6 align-items-end">Event Type:</label>
+        <p-dropdown  formControlName="eventType" class="col-6" styleClass="w-full"></p-dropdown>
       </div>
-      <div class="form-group">
-        <label>Distance:</label>
-        <input type="number" pInputText formControlName="distance" class="form-control">
+      <div class="grid flex m-1">
+        <label class="col-6 align-content-end">Distance:</label>
+        <input type="number" pInputText formControlName="distance" class="col-6">
       </div>
-      <div class="form-group">
-        <label for="difficultyLevel">Difficulty Level:</label>
-        <input type="text" pInputText formControlName="difficultyLevel" class="form-control">
+      <div class="grid flex m-1">
+        <label for="difficultyLevel" class="col-6 align-items-end">Difficulty Level:</label>
+        <input type="text" pInputText formControlName="difficultyLevel" class="col-6">
       </div>
-      <div class="form-group">
-        <label for="description">Description:</label>
-        <textarea rows="5" cols="30" pInputTextarea formControlName="description" class="form-control"></textarea>
+      <div class="grid flex m-1">
+        <label for="description" class="col-6 align-items-end">Description:</label>
+        <textarea rows="5" cols="30" pInputTextarea formControlName="description" class="col-6"></textarea>
       </div>
-      <div class="form-group">
-        <label class="p-float-label" for="startDatetime">Start Date & Time:</label>
-        <p-calendar formControlName="startDatetime" class="form-control"></p-calendar>
+      <div class="grid flex m-1">
+        <label for="startDatetime" class="col-6 align-items-end">Start Date & Time:</label>
+        <p-calendar formControlName="startDatetime" [iconDisplay]="'input'" [showIcon]="true" class="col-6"></p-calendar>
       </div>
-      <div class="form-group">
-        <label for="endDatetime">End Date & Time:</label>
-        <p-calendar formControlName="endDatetime" class="form-control"></p-calendar>
+      <div class="grid flex m-1">
+        <label for="endDatetime" class="col-6 align-items-end">End Date & Time:</label>
+        <p-calendar formControlName="endDatetime" [iconDisplay]="'input'" [showIcon]="true" class="col-6"></p-calendar>
       </div>
     </form>
   </div>
