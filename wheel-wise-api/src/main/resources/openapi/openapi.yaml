@@ -1,0 +1,107 @@
+openapi: 3.0.1
+info:
+  title: Wheel Wise
+  description: Application for organizing cycling events.
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080/api
+    description: Local server
+paths:
+  /events:
+    post:
+      summary: Create a new event
+      operationId: createEvent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Event'
+      responses:
+        '201':
+          description: Event created successfully
+        '400':
+          description: Bad request
+    get:
+      summary: Get all events
+      operationId: getAllEvents
+      responses:
+        '200':
+          description: List of all events
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Event'
+  /events/{eventId}:
+    get:
+      summary: Get event details
+      operationId: getEvent
+      parameters:
+        - name: eventId
+          in: path
+          required: true
+          description: Event ID
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Get event details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Event'
+  /events/{eventId}/register:
+    post:
+      summary: Register for an event
+      operationId: registerForEvent
+      parameters:
+        - name: eventId
+          in: path
+          required: true
+          description: Event ID
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegistrationRequest'
+      responses:
+        '200':
+          description: Registered successfully
+        '400':
+          description: Bad request
+components:
+  schemas:
+    Event:
+      type: object
+      properties:
+        eventId:
+          type: integer
+        eventType:
+          type: string
+        distance:
+          type: number
+        difficultyLevel:
+          type: string
+        description:
+          type: string
+        startDatetime:
+          type: string
+          format: date-time
+        endDatetime:
+          type: string
+          format: date-time
+        organizerId:
+          type: integer
+        routeId:
+          type: integer
+    RegistrationRequest:
+      type: object
+      properties:
+        userId:
+          type: integer
+
