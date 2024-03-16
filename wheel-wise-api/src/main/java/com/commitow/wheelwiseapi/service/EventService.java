@@ -5,6 +5,7 @@ import com.commitow.wheelwiseapi.openapi.model.RegistrationRequestDto;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -15,10 +16,21 @@ public class EventService {
     }
 
     public List<EventDto> getAllEvents() {
-        return null;
+        ArrayList<EventDto> events = new ArrayList<>();
+        events.add(getEventDto());
+        events.add(getEventDto());
+        events.add(getEventDto());
+        return events;
     }
 
     public EventDto getEvent(Integer eventId) {
+        return getEventDto();
+    }
+
+    public void registerForEvent(Integer eventId, RegistrationRequestDto registrationRequestDto) {
+    }
+
+    private static EventDto getEventDto() {
         EventDto eventDto = new EventDto();
         eventDto.setEventId(1);
         eventDto.eventType("Training");
@@ -28,8 +40,5 @@ public class EventService {
         eventDto.setStartDatetime(LocalDateTime.now());
         eventDto.setEndDatetime(LocalDateTime.now());
         return eventDto;
-    }
-
-    public void registerForEvent(Integer eventId, RegistrationRequestDto registrationRequestDto) {
     }
 }
