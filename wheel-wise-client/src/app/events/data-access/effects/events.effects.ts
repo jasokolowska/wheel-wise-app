@@ -1,7 +1,7 @@
 // events.effects.ts
 
 import { Injectable } from '@angular/core';
-import { Actions, createEffect, ofType } from '@ngrx/store';
+import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
 import { catchError, map, switchMap } from 'rxjs/operators';
 import { EventsService } from '../services/events.service';
