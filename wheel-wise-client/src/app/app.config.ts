@@ -4,10 +4,17 @@ import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
 import {provideAnimations} from "@angular/platform-browser/animations";
-import { provideStore } from '@ngrx/store';
+import {provideState, provideStore} from '@ngrx/store';
 import {EventsEffects} from "./events/data-access/effects/events.effects";
 import {provideEffects} from "@ngrx/effects";
+import {provideHttpClient, withFetch} from "@angular/common/http";
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideClientHydration(), provideAnimations(), provideStore(), provideEffects(EventsEffects)]
+  providers: [
+    provideRouter(routes),
+    provideHttpClient(withFetch()),
+    provideClientHydration(),
+    provideAnimations(),
+    provideStore(),
+    provideEffects(EventsEffects)]
 };

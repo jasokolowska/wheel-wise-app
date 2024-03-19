@@ -3,17 +3,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Event } from '../../event.model';
+import { CyclingEvent } from '../../event.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EventsService {
-  private eventsUrl = 'api/events'; // Assuming you have a mock API at this endpoint
+  private eventsUrl = 'https://localhost:8080/api/events';
 
   constructor(private http: HttpClient) {}
 
-  getEvents(): Observable<Event[]> {
-    return this.http.get<Event[]>(this.eventsUrl);
+  getEvents(): Observable<CyclingEvent[]> {
+    return this.http.get<CyclingEvent[]>(this.eventsUrl);
   }
 }

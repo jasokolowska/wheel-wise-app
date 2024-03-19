@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {StoreModule} from "@ngrx/store";
-import {eventsReducer} from "./data-access/reducers/events.reducer";
+import {eventsFeature} from "./data-access/reducers/events.reducer";
 
 
 
 @NgModule({
   declarations: [],
   imports: [
-    StoreModule.forFeature('events', eventsReducer),
+    StoreModule.forFeature('events', eventsFeature.reducer),
   ]
 })
 export class EventsModule { }

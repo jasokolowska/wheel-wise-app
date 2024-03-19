@@ -1,5 +1,5 @@
 <div class="inline-flex">
-  @for (event of events; track event.header) {
+  @for (event of (events$ | async); track event.header) {
     <app-event-item
       class=" inline-flex w-2 p-3"
       [header]="event.header"

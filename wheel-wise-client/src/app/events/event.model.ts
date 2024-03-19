@@ -1,4 +1,4 @@
-export interface Event {
+export interface CyclingEvent {
   header: string;
   subheader: string;
   img: string;
