@@ -1,8 +1,13 @@
 export interface CyclingEvent {
-  header: string;
-  subheader: string;
+  title: string;
+  subtitle: string;
   img: string;
   distance: string;
-  level: string;
-  type: 'competition' | 'training';
+  difficultyLevel: string;
+  eventType: 'competition' | 'training';
+  description: string,
+  startDatetime: string,
+  endDatetime: string,
+  organizerId: string,
+  routeId: string
 }

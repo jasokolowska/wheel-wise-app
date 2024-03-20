@@ -87,6 +87,12 @@ components:
           type: number
         difficultyLevel:
           type: string
+        title:
+          type: string
+        subtitle:
+          type: string
+        img:
+          type: string
         description:
           type: string
         startDatetime:

@@ -1,16 +1,18 @@
 <div class="inline-flex">
-  @for (event of (events$ | async); track event.header) {
-    <app-event-item
-      class=" inline-flex w-2 p-3"
-      [header]="event.header"
-      [subheader]="event.subheader"
-      [distance]="event.distance"
-      [level]="event.level"
-      [type]="event.type"
-      [img]="event.img"
-    >
-    </app-event-item>
-  } @empty {
-    There is no open events right now...
+  @if (events$ | async; as events) {
+    @for (event of events; track event.title) {
+      <app-event-item
+        class=" inline-flex w-2 p-3"
+        [header]="event.title"
+        [subheader]="event.title"
+        [distance]="event.distance"
+        [level]="event.difficultyLevel"
+        [type]="event.eventType"
+        [img]="event.img"
+      >
+      </app-event-item>
+    } @empty {
+      There is no open events right now...
+    }
   }
 </div>
