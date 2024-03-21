@@ -6,6 +6,8 @@ import {MapComponent} from "../eventdetails/map/map.component";
 import {InputTextareaModule} from "primeng/inputtextarea";
 import {DropdownModule} from "primeng/dropdown";
 import {CalendarModule} from "primeng/calendar";
+import {Store} from "@ngrx/store";
+import {createEvent} from "../../data-access/actions/create-event.actions";
 
 @Component({
   selector: 'app-event-form',
@@ -25,11 +27,13 @@ import {CalendarModule} from "primeng/calendar";
 export class EventFormComponent implements OnInit{
   eventForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private store: Store) { }
 
   ngOnInit(): void {
     this.eventForm = this.formBuilder.group({
-      eventType: ['', Validators.required],
+      title: ['', Validators.required],
+      subtitle: [''],
+      eventType: [''],
       distance: ['', Validators.required],
       difficultyLevel: ['', Validators.required],
       description: ['', Validators.required],
@@ -39,8 +43,9 @@ export class EventFormComponent implements OnInit{
   }
 
   onSubmit(): void {
-    if (this.eventForm) {
+    if (this.eventForm.valid) {
       console.log(this.eventForm.value);
+      this.store.dispatch(createEvent(this.eventForm.value));
     }
   }
 }

@@ -16,4 +16,8 @@ export class EventsService {
   getEvents(): Observable<CyclingEvent[]> {
     return this.http.get<CyclingEvent[]>(this.eventsUrl);
   }
+
+  createEvent(event: CyclingEvent): Observable<CyclingEvent> {
+    return this.http.post<CyclingEvent>(this.eventsUrl, event);
+  }
 }

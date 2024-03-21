@@ -1,7 +1,20 @@
+<!-- TODO: Add all fields to the form -->
+<!-- TODO: Create DAL (Data Access Layer) for creating new event -->
+<!-- TODO: Add Functionality with importing a route (from a file) -->
+<!-- TODO: Add possibility to change default image (default image should be added on the backed based on event type/ route, tbd)-->
+
 <div class="grid bg-white-alpha-70">
   <h2 class="col-12">Create New Event</h2>
   <div class="col-6">
     <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+      <div class="grid flex m-1">
+        <label class="col-6 align-items-end">Title:</label>
+        <input type="text" pInputText formControlName="title" class="col-6">
+      </div>
+      <div class="grid flex m-1">
+        <label class="col-6 align-items-end">Subtitle:</label>
+        <input type="text" pInputText formControlName="subtitle" class="col-6">
+      </div>
       <div class="grid flex m-1">
         <label class="col-6 align-items-end">Event Type:</label>
         <p-dropdown  formControlName="eventType" class="col-6" styleClass="w-full"></p-dropdown>
