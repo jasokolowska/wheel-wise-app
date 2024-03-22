@@ -8,6 +8,7 @@ import {DropdownModule} from "primeng/dropdown";
 import {CalendarModule} from "primeng/calendar";
 import {Store} from "@ngrx/store";
 import {createEvent} from "../../data-access/actions/create-event.actions";
+import {CyclingEvent} from "../../event.model";
 
 @Component({
   selector: 'app-event-form',
@@ -44,8 +45,9 @@ export class EventFormComponent implements OnInit{
 
   onSubmit(): void {
     if (this.eventForm.valid) {
+      const newEvent: CyclingEvent = this.eventForm.value;
       console.log(this.eventForm.value);
-      this.store.dispatch(createEvent(this.eventForm.value));
+      this.store.dispatch(createEvent({event: newEvent}));
     }
   }
 }

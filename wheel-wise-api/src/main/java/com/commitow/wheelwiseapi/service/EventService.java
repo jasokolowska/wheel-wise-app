@@ -13,7 +13,8 @@ import java.util.List;
 public class EventService {
 
 
-    public void createNewEvent(EventDto eventDto) {
+    public EventDto createNewEvent(EventDto eventDto) {
+        return  eventDto;
     }
 
     public List<EventDto> getAllEvents() {

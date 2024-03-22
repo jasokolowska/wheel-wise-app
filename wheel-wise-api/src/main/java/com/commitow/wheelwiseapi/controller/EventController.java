@@ -19,9 +19,9 @@ public class EventController implements EventsApi {
     private final EventService eventService;
 
     @Override
-    public ResponseEntity<Void> createEvent(EventDto eventDto) {
-        eventService.createNewEvent(eventDto);
-        return ResponseEntity.accepted().build();
+    public ResponseEntity<EventDto> createEvent(EventDto eventDto) {
+        EventDto newEvent = eventService.createNewEvent(eventDto);
+        return ResponseEntity.accepted().body(newEvent);
     }
 
     @Override
