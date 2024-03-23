@@ -9,6 +9,8 @@ import {CalendarModule} from "primeng/calendar";
 import {Store} from "@ngrx/store";
 import {createEvent} from "../../data-access/actions/create-event.actions";
 import {CyclingEvent} from "../../event.model";
+import {createEventFeature} from "../../data-access/reducers/create-event.reducer";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-event-form',
@@ -25,10 +27,12 @@ import {CyclingEvent} from "../../event.model";
   templateUrl: './event-form.component.html',
   styleUrl: './event-form.component.scss'
 })
-export class EventFormComponent implements OnInit{
+export class EventFormComponent implements OnInit {
   eventForm!: FormGroup;
+  createdEvent$ = this.store.select(createEventFeature.selectNewEvent);
 
-  constructor(private formBuilder: FormBuilder, private store: Store) { }
+  constructor(private formBuilder: FormBuilder, private store: Store, private router: Router) {
+  }
 
   ngOnInit(): void {
     this.eventForm = this.formBuilder.group({
@@ -41,12 +45,17 @@ export class EventFormComponent implements OnInit{
       startDatetime: ['', Validators.required],
       endDatetime: ['', Validators.required]
     });
+
+    this.createdEvent$.pipe().subscribe(next => {
+      if (next && next.eventId) {
+        this.router.navigate([`/event-details/${next.eventId}`])
+      }
+    });
   }
 
   onSubmit(): void {
     if (this.eventForm.valid) {
       const newEvent: CyclingEvent = this.eventForm.value;
-      console.log(this.eventForm.value);
       this.store.dispatch(createEvent({event: newEvent}));
     }
   }

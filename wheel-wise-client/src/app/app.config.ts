@@ -9,6 +9,7 @@ import {EventsEffects} from "./events/data-access/effects/events.effects";
 import {provideEffects} from "@ngrx/effects";
 import {provideHttpClient, withFetch} from "@angular/common/http";
 import {CreateEventEffects} from "./events/data-access/effects/create-event.effects";
+import {createEventFeature} from "./events/data-access/reducers/create-event.reducer";
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -17,5 +18,6 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(),
     provideAnimations(),
     provideStore(),
+    provideState(createEventFeature),
     provideEffects([EventsEffects, CreateEventEffects])]
 };

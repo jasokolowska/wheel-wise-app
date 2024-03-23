@@ -14,6 +14,7 @@ public class EventService {
 
 
     public EventDto createNewEvent(EventDto eventDto) {
+        eventDto.setEventId(1);
         return  eventDto;
     }
 

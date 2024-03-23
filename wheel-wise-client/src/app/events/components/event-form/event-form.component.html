@@ -1,5 +1,6 @@
-<!-- TODO: Add all fields to the form -->
-<!-- TODO: Create DAL (Data Access Layer) for creating new event -->
+<!-- TODO: Add all fields to the form - Done -->
+<!-- TODO: Create DAL (Data Access Layer) for creating new event - Done -->
+<!--  -->
 <!-- TODO: Add Functionality with importing a route (from a file) -->
 <!-- TODO: Add possibility to change default image (default image should be added on the backed based on event type/ route, tbd)-->
 
@@ -25,19 +26,19 @@
       </div>
       <div class="grid flex m-1">
         <label for="difficultyLevel" class="col-6 align-items-end">Difficulty Level:</label>
-        <input type="text" pInputText formControlName="difficultyLevel" class="col-6">
+        <input id="difficultyLevel" type="text" pInputText formControlName="difficultyLevel" class="col-6">
       </div>
       <div class="grid flex m-1">
         <label for="description" class="col-6 align-items-end">Description:</label>
-        <textarea rows="5" cols="30" pInputTextarea formControlName="description" class="col-6"></textarea>
+        <textarea id="description" rows="5" cols="30" pInputTextarea formControlName="description" class="col-6"></textarea>
       </div>
       <div class="grid flex m-1">
         <label for="startDatetime" class="col-6 align-items-end">Start Date & Time:</label>
-        <p-calendar formControlName="startDatetime" [iconDisplay]="'input'" [showIcon]="true" class="col-6"></p-calendar>
+        <p-calendar id="startDatetime" formControlName="startDatetime" [iconDisplay]="'input'" [showIcon]="true" class="col-6"></p-calendar>
       </div>
       <div class="grid flex m-1">
         <label for="endDatetime" class="col-6 align-items-end">End Date & Time:</label>
-        <p-calendar formControlName="endDatetime" [iconDisplay]="'input'" [showIcon]="true" class="col-6"></p-calendar>
+        <p-calendar id="endDatetime" formControlName="endDatetime" [iconDisplay]="'input'" [showIcon]="true" class="col-6"></p-calendar>
       </div>
     </form>
   </div>

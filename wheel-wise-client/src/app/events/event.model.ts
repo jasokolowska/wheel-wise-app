@@ -1,4 +1,5 @@
 export interface CyclingEvent {
+  eventId: string;
   title: string;
   subtitle: string;
   img: string;
