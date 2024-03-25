@@ -20,6 +20,16 @@ export class EventsEffects {
     )
   ));
 
+  loadEventsById$ = createEffect(() => this.actions$.pipe(
+    ofType(EventsActions.loadEventById),
+    switchMap(({eventId}) =>
+      this.eventsService.getEvent(eventId).pipe(
+        map(event => EventsActions.loadEventByIdSuccess({ event })),
+        catchError(error => of(EventsActions.loadEventByIdFailure({ error })))
+      )
+    )
+  ));
+
   constructor(
     private actions$: Actions,
     private eventsService: EventsService

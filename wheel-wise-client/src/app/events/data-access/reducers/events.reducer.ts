@@ -8,12 +8,18 @@ export interface EventsState {
   events: CyclingEvent[];
   eventsLoading: boolean;
   eventsLoadingError: any;
+  event: CyclingEvent | undefined;
+  eventLoading: boolean;
+  eventLoadingError: any;
 }
 
 export const initialState: EventsState = {
   events: [],
   eventsLoading: false,
-  eventsLoadingError: null
+  eventsLoadingError: null,
+  event: undefined,
+  eventLoading: false,
+  eventLoadingError: null
 };
 
 export const eventsFeature = createFeature({
@@ -22,19 +28,36 @@ export const eventsFeature = createFeature({
     initialState,
     on(EventsActions.loadEvents, state => ({
       ...state,
-      loading: true,
-      error: null
+      eventsLoading: true,
+      eventsLoadingError: null
     })),
     on(EventsActions.loadEventsSuccess, (state, {events}) => ({
       ...state,
       events,
-      loading: false
+      eventsLoading: false
     })),
     on(EventsActions.loadEventsFailure, (state, {error}) => ({
       ...state,
-      loading: false,
-      error
-    })))
+      eventsLoading: false,
+      eventsLoadingError: error
+    })),
+    on(EventsActions.loadEventById, state => ({
+      ...state,
+      eventLoading: true,
+      eventsLoadingError: null
+    })),
+    on(EventsActions.loadEventByIdSuccess, (state, {event}) => ({
+      ...state,
+      event,
+      eventLoading: false
+    })),
+    on(EventsActions.loadEventByIdFailure, (state, {error}) => ({
+      ...state,
+      eventLoading: false,
+      eventLoadingError: error
+    }))
+  ),
+
 });
 
 export const {
