@@ -4,41 +4,41 @@
 <!-- TODO: Add Functionality with importing a route (from a file) -->
 <!-- TODO: Add possibility to change default image (default image should be added on the backed based on event type/ route, tbd)-->
 
-<div class="grid bg-white-alpha-70">
+<div class="bg-white-alpha-70 font-bold text-700">
   <h2 class="col-12">Create New Event</h2>
   <div class="col-6">
     <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
-      <div class="grid flex m-1">
-        <label class="col-6 align-items-end">Title:</label>
-        <input type="text" pInputText formControlName="title" class="col-6">
+      <div class="field">
+        <label for="title">Title</label>
+        <input id="title" type="text" pInputText formControlName="title" class="w-full">
       </div>
-      <div class="grid flex m-1">
-        <label class="col-6 align-items-end">Subtitle:</label>
-        <input type="text" pInputText formControlName="subtitle" class="col-6">
+      <div class="field">
+        <label for="subtitle">Subtitle</label>
+        <input id="subtitle" type="text" pInputText formControlName="subtitle" class="w-full">
       </div>
-      <div class="grid flex m-1">
-        <label class="col-6 align-items-end">Event Type:</label>
-        <p-dropdown  formControlName="eventType" class="col-6" styleClass="w-full"></p-dropdown>
+      <div class="field">
+        <label for="eventType">Event Type</label>
+        <p-dropdown id="eventType" formControlName="eventType" styleClass="w-full"></p-dropdown>
       </div>
-      <div class="grid flex m-1">
-        <label class="col-6 align-content-end">Distance:</label>
-        <input type="number" pInputText formControlName="distance" class="col-6">
+      <div class="field">
+        <label for="distance">Distance</label>
+        <input id="distance" type="number" pInputText formControlName="distance" class="w-full">
       </div>
-      <div class="grid flex m-1">
-        <label for="difficultyLevel" class="col-6 align-items-end">Difficulty Level:</label>
-        <input id="difficultyLevel" type="text" pInputText formControlName="difficultyLevel" class="col-6">
+      <div class="field">
+        <label for="difficultyLevel">Difficulty Level</label>
+        <p-dropdown id="difficultyLevel" formControlName="difficultyLevel" styleClass="w-full"></p-dropdown>
       </div>
-      <div class="grid flex m-1">
-        <label for="description" class="col-6 align-items-end">Description:</label>
-        <textarea id="description" rows="5" cols="30" pInputTextarea formControlName="description" class="col-6"></textarea>
+      <div class="field">
+        <label for="description">Description</label>
+        <textarea id="description" rows="5" cols="30" pInputTextarea formControlName="description" class="w-full"></textarea>
       </div>
-      <div class="grid flex m-1">
-        <label for="startDatetime" class="col-6 align-items-end">Start Date & Time:</label>
-        <p-calendar id="startDatetime" formControlName="startDatetime" [iconDisplay]="'input'" [showIcon]="true" class="col-6"></p-calendar>
+      <div class="field">
+        <label for="startDatetime">Start Date & Time:</label>
+        <p-calendar id="startDatetime" formControlName="startDatetime" [iconDisplay]="'input'" [showIcon]="true" styleClass="w-full"></p-calendar>
       </div>
-      <div class="grid flex m-1">
-        <label for="endDatetime" class="col-6 align-items-end">End Date & Time:</label>
-        <p-calendar id="endDatetime" formControlName="endDatetime" [iconDisplay]="'input'" [showIcon]="true" class="col-6"></p-calendar>
+      <div class="field">
+        <label for="endDatetime">End Date & Time:</label>
+        <p-calendar id="endDatetime" formControlName="endDatetime" [iconDisplay]="'input'" [showIcon]="true" styleClass="w-full"></p-calendar>
       </div>
     </form>
   </div>
@@ -49,4 +49,3 @@
     <p-button type="submit" (onClick)="onSubmit()">Create Event</p-button>
   </div>
 </div>
-
