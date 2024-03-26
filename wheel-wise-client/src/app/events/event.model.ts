@@ -4,11 +4,22 @@ export interface CyclingEvent {
   subtitle: string;
   img: string;
   distance: string;
-  difficultyLevel: string;
-  eventType: 'competition' | 'training';
+  difficultyLevel: DifficultyLevel;
+  eventType: EventType;
   description: string,
   startDatetime: string,
   endDatetime: string,
   organizerId: string,
   routeId: string
 }
+
+export enum EventType {
+  Competition = 'competition',
+  Training = 'training'
+}
+export enum DifficultyLevel {
+  Hard = 'hard',
+  Medium = 'medium',
+  Easy = 'easy'
+}
+

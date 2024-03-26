@@ -8,7 +8,7 @@ import {DropdownModule} from "primeng/dropdown";
 import {CalendarModule} from "primeng/calendar";
 import {Store} from "@ngrx/store";
 import {createEvent} from "../../data-access/actions/create-event.actions";
-import {CyclingEvent} from "../../event.model";
+import {CyclingEvent, DifficultyLevel, EventType} from "../../event.model";
 import {createEventFeature} from "../../data-access/reducers/create-event.reducer";
 import {Router} from "@angular/router";
 
@@ -30,6 +30,9 @@ import {Router} from "@angular/router";
 export class EventFormComponent implements OnInit {
   eventForm!: FormGroup;
   createdEvent$ = this.store.select(createEventFeature.selectNewEvent);
+
+  eventTypes = Object.values(EventType);
+  difficultyLevels = Object.values(DifficultyLevel);
 
   constructor(private formBuilder: FormBuilder, private store: Store, private router: Router) {
   }

@@ -18,7 +18,12 @@
       </div>
       <div class="field">
         <label for="eventType">Event Type</label>
-        <p-dropdown id="eventType" formControlName="eventType" styleClass="w-full"></p-dropdown>
+        <p-dropdown
+          id="eventType"
+          formControlName="eventType"
+          styleClass="w-full"
+          [options]="eventTypes">
+        </p-dropdown>
       </div>
       <div class="field">
         <label for="distance">Distance</label>
@@ -26,7 +31,12 @@
       </div>
       <div class="field">
         <label for="difficultyLevel">Difficulty Level</label>
-        <p-dropdown id="difficultyLevel" formControlName="difficultyLevel" styleClass="w-full"></p-dropdown>
+        <p-dropdown
+          id="difficultyLevel"
+          formControlName="difficultyLevel"
+          styleClass="w-full"
+          [options]="difficultyLevels"
+        ></p-dropdown>
       </div>
       <div class="field">
         <label for="description">Description</label>
