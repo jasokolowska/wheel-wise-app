@@ -15,3 +15,5 @@ export const createEventFailure = createAction(
   '[Events] Create Event Failure',
   props<{ error: any }>()
 );
+
+export const clearLastEvent = createAction('[Events] Clear last saved event');

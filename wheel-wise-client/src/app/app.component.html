@@ -1,9 +1,10 @@
 <app-navigation-side-bar
-  [sidebarVisible]="sidebarVisible">
-</app-navigation-side-bar>
+  [sidebarVisible]="sidebarVisible"
+  (closeSidebar)="closeSidebar()"
+></app-navigation-side-bar>
 
 <div>
-  <p-button type="button" class="mr-2" (click)="sidebarVisible = true" icon="pi pi-align-justify"></p-button>
+  <p-button type="button" class="mr-2" (click)="openSidebar()" icon="pi pi-align-justify"></p-button>
 </div>
 
 <div class="p-6">

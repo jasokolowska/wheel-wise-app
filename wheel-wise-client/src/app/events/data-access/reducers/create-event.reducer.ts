@@ -33,6 +33,10 @@ export const createEventFeature = createFeature({
       ...state,
       creating: false,
       error: error
+    })),
+    on(CreateEventActions.clearLastEvent, state => ({
+      ...state,
+      newEvent: undefined
     }))
   )
 });

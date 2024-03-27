@@ -10,6 +10,7 @@ import {provideEffects} from "@ngrx/effects";
 import {provideHttpClient, withFetch} from "@angular/common/http";
 import {CreateEventEffects} from "./events/data-access/effects/create-event.effects";
 import {createEventFeature} from "./events/data-access/reducers/create-event.reducer";
+import {provideImgixLoader} from "@angular/common";
 
 export const appConfig: ApplicationConfig = {
   providers: [

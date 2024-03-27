@@ -5,7 +5,7 @@ import {EventItemComponent} from "./event-item/event-item.component";
 import {CyclingEvent} from "../../event.model";
 import {Store} from "@ngrx/store";
 import {eventsFeature} from "../../data-access/reducers/events.reducer";
-import {AsyncPipe, NgIf} from "@angular/common";
+import {AsyncPipe, NgIf, NgOptimizedImage} from "@angular/common";
 import {loadEvents} from "../../data-access/actions/events.actions";
 
 

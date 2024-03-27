@@ -7,7 +7,7 @@ import {InputTextareaModule} from "primeng/inputtextarea";
 import {DropdownModule} from "primeng/dropdown";
 import {CalendarModule} from "primeng/calendar";
 import {Store} from "@ngrx/store";
-import {createEvent} from "../../data-access/actions/create-event.actions";
+import {clearLastEvent, createEvent} from "../../data-access/actions/create-event.actions";
 import {CyclingEvent, DifficultyLevel, EventType} from "../../event.model";
 import {createEventFeature} from "../../data-access/reducers/create-event.reducer";
 import {Router} from "@angular/router";
@@ -52,6 +52,7 @@ export class EventFormComponent implements OnInit {
     this.createdEvent$.pipe().subscribe(next => {
       if (next && next.eventId) {
         this.router.navigate([`/event-details/${next.eventId}`])
+        this.store.dispatch(clearLastEvent())
       }
     });
   }

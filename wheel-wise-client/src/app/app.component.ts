@@ -14,4 +14,11 @@ import {EventsModule} from "./events/events.module";
 })
 export class AppComponent {
   sidebarVisible = false;
+
+  openSidebar() {
+    this.sidebarVisible = true;
+  }
+  closeSidebar() {
+    this.sidebarVisible = false;
+  }
 }

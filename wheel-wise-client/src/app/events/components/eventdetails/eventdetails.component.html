@@ -1,22 +1,24 @@
-<div class="grid bg-white-alpha-70">
+<div class="grid bg-white-alpha-70 font-bold text-700">
   <!-- Event Details -->
-  <div class="col-6 md-6">
-    <h2>Event Details</h2>
-    <ul class="event-details-list">
-      <li><strong>Name:</strong> {{ eventdetails.name }}</li>
-      <li><strong>Date:</strong> {{ eventdetails.date }}</li>
-      <li><strong>Location:</strong> {{ eventdetails.location }}</li>
-      <li><strong>Description:</strong> {{ eventdetails.description }}</li>
-      <!-- Add more event details as needed -->
-    </ul>
-  </div>
-
-  <!-- Map with Route -->
-  <div class="col-6 md-6">
-    <h2>Route Map</h2>
-    <!-- Placeholder for Map with Route (You can use PrimeNG GMap component or any other mapping library) -->
-    <div class="map-container">
-<!--      <app-map></app-map>-->
+  @if (eventdetails$ | async; as eventdetails) {
+    <div class="col-6 md-6">
+      <h2>{{ eventdetails.title }}</h2>
+      <ul class="event-details-list">
+        <li><strong>Distance:</strong> {{ eventdetails.distance }}</li>
+        <li><strong>Date:</strong> {{ eventdetails.startDatetime }}</li>
+        <li><strong>Location:</strong> {{ eventdetails.routeId }}</li>
+        <li><strong>Description:</strong> {{ eventdetails.description }}</li>
+        <!-- Add more event details as needed -->
+      </ul>
     </div>
-  </div>
+
+    <!-- Map with Route -->
+    <div class="col-6 md-6">
+      <h2>Route Map</h2>
+      <!-- Placeholder for Map with Route (You can use PrimeNG GMap component or any other mapping library) -->
+      <div class="map-container">
+        <!--      <app-map></app-map>-->
+      </div>
+    </div>
+  }
 </div>
