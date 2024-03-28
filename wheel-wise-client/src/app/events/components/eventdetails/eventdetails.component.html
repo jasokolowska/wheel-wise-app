@@ -1,24 +1,52 @@
 <div class="grid bg-white-alpha-70 font-bold text-700">
-  <!-- Event Details -->
   @if (eventdetails$ | async; as eventdetails) {
-    <div class="col-6 md-6">
-      <h2>{{ eventdetails.title }}</h2>
-      <ul class="event-details-list">
-        <li><strong>Distance:</strong> {{ eventdetails.distance }}</li>
-        <li><strong>Date:</strong> {{ eventdetails.startDatetime }}</li>
-        <li><strong>Location:</strong> {{ eventdetails.routeId }}</li>
-        <li><strong>Description:</strong> {{ eventdetails.description }}</li>
-        <!-- Add more event details as needed -->
-      </ul>
+    <div class="col-6">
+    <h2>{{ eventdetails.title }}</h2>
+    <h3>{{ eventdetails.subtitle }}</h3>
+    <p-tabView >
+      <p-tabPanel header="Event details">
+        <div class="grid">
+          <label class="col-2">Distance:</label>
+          <span class="col-10">{{ eventdetails.distance }}</span>
+        </div>
+        <div class="grid">
+          <label class="col-2">Difficulty Level:</label>
+          <span class="col-10">{{ eventdetails.difficultyLevel }}</span>
+        </div>
+        <div class="grid">
+          <label class="col-2">Event Type:</label>
+          <span class="col-10">{{ eventdetails.eventType }}</span>
+        </div>
+        <div class="grid">
+          <label class="col-2">Start Date:</label>
+          <span class="col-10">{{ eventdetails.startDatetime | date }}</span>
+        </div>
+        <div class="grid">
+          <label class="col-2">End Date:</label>
+          <span class="col-10">{{ eventdetails.endDatetime | date }}</span>
+        </div>
+        <div class="grid">
+          <label class="col-2">Organizer:</label>
+          <span class="col-10">{{ eventdetails.organizerId }}</span>
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="Descritpion">
+        <span>{{ eventdetails.description }}</span>
+      </p-tabPanel>
+      <p-tabPanel header="Participants">
+        <span>No content yet, soon available</span>
+      </p-tabPanel>
+      <p-tabPanel header="Gallery">
+        <span>No content yet, soon available</span>
+      </p-tabPanel>
+    </p-tabView>
     </div>
-
     <!-- Map with Route -->
-    <div class="col-6 md-6">
+    <div class="col-6">
       <h2>Route Map</h2>
-      <!-- Placeholder for Map with Route (You can use PrimeNG GMap component or any other mapping library) -->
-      <div class="map-container">
-        <!--      <app-map></app-map>-->
-      </div>
+      <!-- Placeholder for Map with Route -->
+      <!--      <app-map></app-map>-->
+      <div id="mapPlaceholder"></div>
     </div>
   }
 </div>

@@ -5,7 +5,8 @@ import {ActivatedRoute} from "@angular/router";
 import {Store} from "@ngrx/store";
 import {loadEventById} from "../../data-access/actions/events.actions";
 import {eventsFeature} from "../../data-access/reducers/events.reducer";
-import {AsyncPipe, NgIf} from "@angular/common";
+import {AsyncPipe, DatePipe, NgIf} from "@angular/common";
+import {TabViewModule} from "primeng/tabview";
 
 @Component({
   selector: 'app-eventdetails',
@@ -14,7 +15,9 @@ import {AsyncPipe, NgIf} from "@angular/common";
     GoogleMap,
     MapComponent,
     AsyncPipe,
-    NgIf
+    NgIf,
+    DatePipe,
+    TabViewModule
   ],
   templateUrl: './eventdetails.component.html',
   styleUrl: './eventdetails.component.scss'
