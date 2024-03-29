@@ -1,3 +1,8 @@
 #mapPlaceholder {
   height: 60vh; /* 60% of the viewport height */
+  background-color: aqua;
+}
+
+.p-tabview .p-tabview-panels {
+  min-height: 60vh;
 }

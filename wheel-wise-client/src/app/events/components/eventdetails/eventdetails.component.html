@@ -3,8 +3,8 @@
     <div class="col-6">
     <h2>{{ eventdetails.title }}</h2>
     <h3>{{ eventdetails.subtitle }}</h3>
-    <p-tabView >
-      <p-tabPanel header="Event details">
+    <p-tabView class="h-full" styleClass="h-full">
+      <p-tabPanel header="Event details" class="h-full" styleClass="h-full">
         <div class="grid">
           <label class="col-2">Distance:</label>
           <span class="col-10">{{ eventdetails.distance }}</span>
@@ -44,6 +44,7 @@
     <!-- Map with Route -->
     <div class="col-6">
       <h2>Route Map</h2>
+      <h3> </h3>
       <!-- Placeholder for Map with Route -->
       <!--      <app-map></app-map>-->
       <div id="mapPlaceholder"></div>

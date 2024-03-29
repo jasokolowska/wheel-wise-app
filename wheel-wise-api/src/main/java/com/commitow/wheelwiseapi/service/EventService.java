@@ -2,6 +2,9 @@ package com.commitow.wheelwiseapi.service;
 
 import com.commitow.wheelwiseapi.openapi.model.EventDto;
 import com.commitow.wheelwiseapi.openapi.model.RegistrationRequestDto;
+import com.commitow.wheelwiseapi.persistance.entity.EventEty;
+import com.commitow.wheelwiseapi.persistance.repository.EventRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -10,8 +13,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class EventService {
 
+    private final EventRepository eventRepository;
 
     public EventDto createNewEvent(EventDto eventDto) {
         eventDto.setEventId(1);

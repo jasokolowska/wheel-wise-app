@@ -11,6 +11,7 @@ import {provideHttpClient, withFetch} from "@angular/common/http";
 import {CreateEventEffects} from "./events/data-access/effects/create-event.effects";
 import {createEventFeature} from "./events/data-access/reducers/create-event.reducer";
 import {provideImgixLoader} from "@angular/common";
+import {eventsFeature} from "./events/data-access/reducers/events.reducer";
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -19,6 +20,7 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(),
     provideAnimations(),
     provideStore(),
+    provideState(eventsFeature),
     provideState(createEventFeature),
     provideEffects([EventsEffects, CreateEventEffects])]
 };
