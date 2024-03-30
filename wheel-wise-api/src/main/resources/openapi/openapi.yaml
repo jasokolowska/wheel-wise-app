@@ -85,6 +85,7 @@ components:
       properties:
         eventId:
           type: integer
+          format: int64
         eventType:
           type: string
         distance:
