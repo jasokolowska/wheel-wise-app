@@ -26,4 +26,5 @@ export class EventItemComponent {
   @Input() distance = '';
   @Input() level = '';
   @Input() type: string | undefined = '';
+  @Input() eventId: string | undefined = '';
 }
