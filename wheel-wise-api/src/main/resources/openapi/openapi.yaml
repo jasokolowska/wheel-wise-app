@@ -49,6 +49,7 @@ paths:
           description: Event ID
           schema:
             type: integer
+            format: int64
       responses:
         '200':
           description: Get event details

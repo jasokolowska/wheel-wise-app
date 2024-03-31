@@ -30,7 +30,7 @@ public class EventController implements EventsApi {
     }
 
     @Override
-    public ResponseEntity<EventDto> getEvent(Integer eventId) {
+    public ResponseEntity<EventDto> getEvent(Long eventId) {
         return ResponseEntity.ok(eventService.getEvent(eventId));
     }
 

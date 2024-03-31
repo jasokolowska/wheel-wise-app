@@ -38,6 +38,15 @@ public class EventEty {
     @Column(name = "description", columnDefinition = "TEXT")
     private String description;
 
+    @Column(name = "title")
+    private String title;
+
+    @Column(name = "subtitle")
+    private String subtitle;
+
+    @Column(name = "img")
+    private String img;
+
     @ManyToOne
     @JoinColumn(name = "organizer_id", referencedColumnName = "user_id")
     private UserEty organizer;

@@ -3,7 +3,9 @@ package com.commitow.wheelwiseapi.service.mapper;
 import com.commitow.wheelwiseapi.openapi.model.EventDto;
 import com.commitow.wheelwiseapi.persistance.entity.EventEty;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.MappingConstants;
+import org.mapstruct.Mappings;
 
 import java.util.List;
 
