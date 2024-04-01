@@ -9,8 +9,16 @@
   <div>Level: {{ level }}</div>
   <div>Distance: {{ distance }}</div>
   <ng-template pTemplate="footer">
-    <p-button label="Sign Up" icon="pi pi-check"></p-button>
-    <p-button label="Details" icon="pi pi-bars" styleClass="p-button-secondary" [routerLink]="'/event-details/' + eventId"
+    <p-button
+      label="Sign Up"
+      icon="pi pi-check"
+      (onClick)="onEventSignUp(eventId)"
+    ></p-button>
+    <p-button
+      label="Details"
+      icon="pi pi-bars"
+      styleClass="p-button-secondary"
+      [routerLink]="'/event-details/' + eventId"
     ></p-button>
   </ng-template>
 </p-card>

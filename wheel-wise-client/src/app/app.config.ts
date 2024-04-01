@@ -12,6 +12,7 @@ import {CreateEventEffects} from "./events/data-access/effects/create-event.effe
 import {createEventFeature} from "./events/data-access/reducers/create-event.reducer";
 import {provideImgixLoader} from "@angular/common";
 import {eventsFeature} from "./events/data-access/reducers/events.reducer";
+import {DynamicDialogModule} from "primeng/dynamicdialog";
 
 export const appConfig: ApplicationConfig = {
   providers: [

@@ -10,6 +10,7 @@
         [type]="event.eventType"
         [img]="event.img"
         [eventId]="event.eventId"
+        (eventSignUp)="onEventSignUp($event)"
       >
       </app-event-item>
     } @empty {

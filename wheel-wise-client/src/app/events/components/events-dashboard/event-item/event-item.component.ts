@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {ButtonModule} from "primeng/button";
 import {CardModule} from "primeng/card";
 import {SharedModule} from "primeng/api";
@@ -27,4 +27,10 @@ export class EventItemComponent {
   @Input() level = '';
   @Input() type: string | undefined = '';
   @Input() eventId: string | undefined = '';
+
+  @Output() eventSignUp = new EventEmitter<string>();
+
+  onEventSignUp(eventId: string | undefined) {
+    this.eventSignUp.emit(eventId);
+  }
 }
