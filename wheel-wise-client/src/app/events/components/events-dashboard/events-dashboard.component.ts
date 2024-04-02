@@ -24,7 +24,7 @@ export class EventsDashboardComponent implements OnInit{
   events$ = this.store.select(eventsFeature.selectEvents);
   ref: DynamicDialogRef | undefined;
 
-  constructor(private store: Store, public dialogService: DialogService) {
+  constructor(private store: Store, private dialogService: DialogService) {
   }
 
   ngOnInit(): void {
